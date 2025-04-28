@@ -1,0 +1,338 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:q7r8s9t0-u1v2-3w4x-5y6z-7a8b9c0d1e2f",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "q7r8s9t0-u1v2-3w4x-5y6z-7a8b9c0d1e2f",
+        "name": [
+          {
+            "family": "Nguyen",
+            "given": ["Minh", "Thi"],
+            "prefix": ["Ms."]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1995-02-14",
+        "address": [
+          {
+            "line": ["654 Pine Street"],
+            "city": "Portland",
+            "state": "OR",
+            "postalCode": "97201"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "503-555-7890",
+            "use": "home"
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "SS",
+                  "display": "Social Security Number"
+                }
+              ]
+            },
+            "value": "789-01-2345"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:r8s9t0u1-v2w3-4x5y-6z7a-8b9c0d1e2f3g",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "r8s9t0u1-v2w3-4x5y-6z7a-8b9c0d1e2f3g",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "EHCPOL",
+              "display": "Private Health Insurance"
+            }
+          ]
+        },
+        "subscriberId": "INS789012345",
+        "beneficiary": {
+          "reference": "urn:uuid:q7r8s9t0-u1v2-3w4x-5y6z-7a8b9c0d1e2f"
+        },
+        "payor": [
+          {
+            "display": "Providence Health Plan",
+            "address": {
+              "line": ["4400 NE Halsey St"],
+              "city": "Portland",
+              "state": "OR",
+              "postalCode": "97213"
+            }
+          }
+        ],
+        "plan": {
+          "name": "Providence PPO Silver Plan",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "PPO",
+                "display": "Preferred Provider Organization"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:s9t0u1v2-w3x4-5y6z-7a8b-9c0d1e2f3g4h",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "s9t0u1v2-w3x4-5y6z-7a8b-9c0d1e2f3g4h",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "308335008",
+                "display": "Patient encounter procedure"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "2024-03-22T11:00:00-08:00",
+          "end": "2024-03-22T12:30:00-08:00"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/78901",
+              "display": "Dr. Lisa Chen",
+              "identifier": {
+                "system": "http://hl7.org/fhir/sid/us-npi",
+                "value": "7890123456"
+              }
+            }
+          }
+        ],
+        "location": [
+          {
+            "location": {
+              "reference": "Location/23456",
+              "display": "Providence Portland Medical Center",
+              "address": {
+                "line": ["4805 NE Glisan St"],
+                "city": "Portland",
+                "state": "OR",
+                "postalCode": "97213"
+              }
+            }
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/anxiety"
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/sid/icd-10",
+                  "code": "F41.1",
+                  "display": "Generalized anxiety disorder"
+                }
+              ]
+            },
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:t0u1v2w3-x4y5-6z7a-8b9c-0d1e2f3g4h5i",
+      "resource": {
+        "resourceType": "Claim",
+        "id": "t0u1v2w3-x4y5-6z7a-8b9c-0d1e2f3g4h5i",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional",
+              "display": "Professional"
+            }
+          ]
+        },
+        "use": "claim",
+        "patient": {
+          "reference": "urn:uuid:q7r8s9t0-u1v2-3w4x-5y6z-7a8b9c0d1e2f"
+        },
+        "billablePeriod": {
+          "start": "2024-03-22T11:00:00-08:00",
+          "end": "2024-03-22T12:30:00-08:00"
+        },
+        "created": "2024-03-22T12:30:00-08:00",
+        "provider": {
+          "reference": "Practitioner/78901",
+          "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "7890123456"
+          }
+        },
+        "priority": {
+          "coding": [
+            {
+              "code": "normal"
+            }
+          ]
+        },
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/sid/icd-10",
+                  "code": "F41.1",
+                  "display": "Generalized anxiety disorder"
+                }
+              ]
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "99214",
+                  "display": "Office visit for established patient (moderate)"
+                }
+              ]
+            },
+            "servicedPeriod": {
+              "start": "2024-03-22T11:00:00-08:00",
+              "end": "2024-03-22T12:30:00-08:00"
+            },
+            "unitPrice": {
+              "value": 150.00,
+              "currency": "USD"
+            },
+            "placeOfService": "11",
+            "emg": "N",
+            "modifier": "25",
+            "diagnosisPointer": [1],
+            "daysOrUnits": 1,
+            "provider": {
+              "npi": "7890123456"
+            }
+          },
+          {
+            "sequence": 2,
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "90837",
+                  "display": "Psychotherapy, 60 minutes with patient"
+                }
+              ]
+            },
+            "servicedPeriod": {
+              "start": "2024-03-22T11:30:00-08:00",
+              "end": "2024-03-22T12:30:00-08:00"
+            },
+            "unitPrice": {
+              "value": 175.00,
+              "currency": "USD"
+            },
+            "placeOfService": "11",
+            "emg": "N",
+            "modifier": "",
+            "diagnosisPointer": [1],
+            "daysOrUnits": 1,
+            "provider": {
+              "npi": "7890123456"
+            }
+          }
+        ],
+        "total": {
+          "value": 325.00,
+          "currency": "USD"
+        },
+        "supportingInfo": [
+          {
+            "sequence": 1,
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+                  "code": "info",
+                  "display": "Information"
+                }
+              ]
+            },
+            "valueString": "Anxiety symptoms affecting daily life"
+          },
+          {
+            "sequence": 2,
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+                  "code": "autoaccident",
+                  "display": "Auto Accident"
+                }
+              ]
+            },
+            "valueBoolean": false
+          },
+          {
+            "sequence": 3,
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+                  "code": "workrelated",
+                  "display": "Work Related"
+                }
+              ]
+            },
+            "valueBoolean": false
+          }
+        ],
+        "insurance": [
+          {
+            "sequence": 1,
+            "focal": true,
+            "coverage": {
+              "reference": "urn:uuid:r8s9t0u1-v2w3-4x5y-6z7a-8b9c0d1e2f3g"
+            }
+          }
+        ],
+        "organization": {
+          "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-ein",
+            "value": "78-9012345"
+          }
+        }
+      }
+    }
+  ]
+} 

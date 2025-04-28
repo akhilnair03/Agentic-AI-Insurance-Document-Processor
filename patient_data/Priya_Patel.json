@@ -1,0 +1,338 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:i9j0k1l2-m3n4-5o6p-7q8r-9s0t1u2v3w4x",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "i9j0k1l2-m3n4-5o6p-7q8r-9s0t1u2v3w4x",
+        "name": [
+          {
+            "family": "Patel",
+            "given": ["Priya", "Anjali"],
+            "prefix": ["Ms."]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1988-12-03",
+        "address": [
+          {
+            "line": ["987 Cedar Lane"],
+            "city": "Austin",
+            "state": "TX",
+            "postalCode": "78701"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "512-555-5678",
+            "use": "home"
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "SS",
+                  "display": "Social Security Number"
+                }
+              ]
+            },
+            "value": "567-89-0123"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:j0k1l2m3-n4o5-6p7q-8r9s-0t1u2v3w4x5y",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "j0k1l2m3-n4o5-6p7q-8r9s-0t1u2v3w4x5y",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "EHCPOL",
+              "display": "Private Health Insurance"
+            }
+          ]
+        },
+        "subscriberId": "INS567890123",
+        "beneficiary": {
+          "reference": "urn:uuid:i9j0k1l2-m3n4-5o6p-7q8r-9s0t1u2v3w4x"
+        },
+        "payor": [
+          {
+            "display": "Blue Cross Blue Shield of Texas",
+            "address": {
+              "line": ["1001 E Lookout Dr"],
+              "city": "Richardson",
+              "state": "TX",
+              "postalCode": "75082"
+            }
+          }
+        ],
+        "plan": {
+          "name": "BCBSTX PPO Silver Plan",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "PPO",
+                "display": "Preferred Provider Organization"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:k1l2m3n4-o5p6-7q8r-9s0t-1u2v3w4x5y6z",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "k1l2m3n4-o5p6-7q8r-9s0t-1u2v3w4x5y6z",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "308335008",
+                "display": "Patient encounter procedure"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "2024-03-20T10:15:00-06:00",
+          "end": "2024-03-20T11:45:00-06:00"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/56789",
+              "display": "Dr. Sarah Johnson",
+              "identifier": {
+                "system": "http://hl7.org/fhir/sid/us-npi",
+                "value": "5678901234"
+              }
+            }
+          }
+        ],
+        "location": [
+          {
+            "location": {
+              "reference": "Location/01234",
+              "display": "St. David's Medical Center",
+              "address": {
+                "line": ["919 E 32nd St"],
+                "city": "Austin",
+                "state": "TX",
+                "postalCode": "78705"
+              }
+            }
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/migraine"
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/sid/icd-10",
+                  "code": "G43.909",
+                  "display": "Migraine, unspecified, not intractable, without status migrainosus"
+                }
+              ]
+            },
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:l2m3n4o5-p6q7-8r9s-0t1u-2v3w4x5y6z7a",
+      "resource": {
+        "resourceType": "Claim",
+        "id": "l2m3n4o5-p6q7-8r9s-0t1u-2v3w4x5y6z7a",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional",
+              "display": "Professional"
+            }
+          ]
+        },
+        "use": "claim",
+        "patient": {
+          "reference": "urn:uuid:i9j0k1l2-m3n4-5o6p-7q8r-9s0t1u2v3w4x"
+        },
+        "billablePeriod": {
+          "start": "2024-03-20T10:15:00-06:00",
+          "end": "2024-03-20T11:45:00-06:00"
+        },
+        "created": "2024-03-20T11:45:00-06:00",
+        "provider": {
+          "reference": "Practitioner/56789",
+          "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "5678901234"
+          }
+        },
+        "priority": {
+          "coding": [
+            {
+              "code": "normal"
+            }
+          ]
+        },
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/sid/icd-10",
+                  "code": "G43.909",
+                  "display": "Migraine, unspecified, not intractable, without status migrainosus"
+                }
+              ]
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "99214",
+                  "display": "Office visit for established patient (moderate)"
+                }
+              ]
+            },
+            "servicedPeriod": {
+              "start": "2024-03-20T10:15:00-06:00",
+              "end": "2024-03-20T11:45:00-06:00"
+            },
+            "unitPrice": {
+              "value": 150.00,
+              "currency": "USD"
+            },
+            "placeOfService": "11",
+            "emg": "N",
+            "modifier": "25",
+            "diagnosisPointer": [1],
+            "daysOrUnits": 1,
+            "provider": {
+              "npi": "5678901234"
+            }
+          },
+          {
+            "sequence": 2,
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "70450",
+                  "display": "Computed tomography, head or brain; without contrast material"
+                }
+              ]
+            },
+            "servicedPeriod": {
+              "start": "2024-03-20T11:00:00-06:00",
+              "end": "2024-03-20T11:30:00-06:00"
+            },
+            "unitPrice": {
+              "value": 250.00,
+              "currency": "USD"
+            },
+            "placeOfService": "11",
+            "emg": "N",
+            "modifier": "",
+            "diagnosisPointer": [1],
+            "daysOrUnits": 1,
+            "provider": {
+              "npi": "5678901234"
+            }
+          }
+        ],
+        "total": {
+          "value": 400.00,
+          "currency": "USD"
+        },
+        "supportingInfo": [
+          {
+            "sequence": 1,
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+                  "code": "info",
+                  "display": "Information"
+                }
+              ]
+            },
+            "valueString": "Severe headache with visual disturbances"
+          },
+          {
+            "sequence": 2,
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+                  "code": "autoaccident",
+                  "display": "Auto Accident"
+                }
+              ]
+            },
+            "valueBoolean": false
+          },
+          {
+            "sequence": 3,
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+                  "code": "workrelated",
+                  "display": "Work Related"
+                }
+              ]
+            },
+            "valueBoolean": false
+          }
+        ],
+        "insurance": [
+          {
+            "sequence": 1,
+            "focal": true,
+            "coverage": {
+              "reference": "urn:uuid:j0k1l2m3-n4o5-6p7q-8r9s-0t1u2v3w4x5y"
+            }
+          }
+        ],
+        "organization": {
+          "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-ein",
+            "value": "56-7890123"
+          }
+        }
+      }
+    }
+  ]
+} 

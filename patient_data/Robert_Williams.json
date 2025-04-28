@@ -1,0 +1,338 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:e5f6g7h8-i9j0-1k2l-3m4n-5o6p7q8r9s0t",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "e5f6g7h8-i9j0-1k2l-3m4n-5o6p7q8r9s0t",
+        "name": [
+          {
+            "family": "Williams",
+            "given": ["Robert", "James"],
+            "prefix": ["Mr."]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1965-04-18",
+        "address": [
+          {
+            "line": ["654 Maple Avenue"],
+            "city": "Seattle",
+            "state": "WA",
+            "postalCode": "98101"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "206-555-4567",
+            "use": "home"
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "SS",
+                  "display": "Social Security Number"
+                }
+              ]
+            },
+            "value": "234-56-7890"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f6g7h8i9-j0k1-2l3m-4n5o-6p7q8r9s0t1u",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "f6g7h8i9-j0k1-2l3m-4n5o-6p7q8r9s0t1u",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "EHCPOL",
+              "display": "Private Health Insurance"
+            }
+          ]
+        },
+        "subscriberId": "INS456789012",
+        "beneficiary": {
+          "reference": "urn:uuid:e5f6g7h8-i9j0-1k2l-3m4n-5o6p7q8r9s0t"
+        },
+        "payor": [
+          {
+            "display": "Premera Blue Cross",
+            "address": {
+              "line": ["7001 220th St SW"],
+              "city": "Mountlake Terrace",
+              "state": "WA",
+              "postalCode": "98043"
+            }
+          }
+        ],
+        "plan": {
+          "name": "Premera Blue Cross PPO Gold Plan",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "PPO",
+                "display": "Preferred Provider Organization"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:g7h8i9j0-k1l2-3m4n-5o6p-7q8r9s0t1u2v",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "g7h8i9j0-k1l2-3m4n-5o6p-7q8r9s0t1u2v",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "308335008",
+                "display": "Patient encounter procedure"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "2024-03-19T08:00:00-08:00",
+          "end": "2024-03-19T09:45:00-08:00"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/45678",
+              "display": "Dr. Emily Thompson",
+              "identifier": {
+                "system": "http://hl7.org/fhir/sid/us-npi",
+                "value": "4567890123"
+              }
+            }
+          }
+        ],
+        "location": [
+          {
+            "location": {
+              "reference": "Location/90123",
+              "display": "Swedish Medical Center",
+              "address": {
+                "line": ["747 Broadway"],
+                "city": "Seattle",
+                "state": "WA",
+                "postalCode": "98122"
+              }
+            }
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/arthritis"
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/sid/icd-10",
+                  "code": "M17.9",
+                  "display": "Osteoarthritis of knee, unspecified"
+                }
+              ]
+            },
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:h8i9j0k1-l2m3-4n5o-6p7q-8r9s0t1u2v3w",
+      "resource": {
+        "resourceType": "Claim",
+        "id": "h8i9j0k1-l2m3-4n5o-6p7q-8r9s0t1u2v3w",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional",
+              "display": "Professional"
+            }
+          ]
+        },
+        "use": "claim",
+        "patient": {
+          "reference": "urn:uuid:e5f6g7h8-i9j0-1k2l-3m4n-5o6p7q8r9s0t"
+        },
+        "billablePeriod": {
+          "start": "2024-03-19T08:00:00-08:00",
+          "end": "2024-03-19T09:45:00-08:00"
+        },
+        "created": "2024-03-19T09:45:00-08:00",
+        "provider": {
+          "reference": "Practitioner/45678",
+          "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "4567890123"
+          }
+        },
+        "priority": {
+          "coding": [
+            {
+              "code": "normal"
+            }
+          ]
+        },
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/sid/icd-10",
+                  "code": "M17.9",
+                  "display": "Osteoarthritis of knee, unspecified"
+                }
+              ]
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "99213",
+                  "display": "Office visit for established patient (low)"
+                }
+              ]
+            },
+            "servicedPeriod": {
+              "start": "2024-03-19T08:00:00-08:00",
+              "end": "2024-03-19T09:45:00-08:00"
+            },
+            "unitPrice": {
+              "value": 125.00,
+              "currency": "USD"
+            },
+            "placeOfService": "11",
+            "emg": "N",
+            "modifier": "25",
+            "diagnosisPointer": [1],
+            "daysOrUnits": 1,
+            "provider": {
+              "npi": "4567890123"
+            }
+          },
+          {
+            "sequence": 2,
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "20610",
+                  "display": "Arthrocentesis, aspiration and/or injection, major joint or bursa"
+                }
+              ]
+            },
+            "servicedPeriod": {
+              "start": "2024-03-19T08:30:00-08:00",
+              "end": "2024-03-19T09:00:00-08:00"
+            },
+            "unitPrice": {
+              "value": 175.00,
+              "currency": "USD"
+            },
+            "placeOfService": "11",
+            "emg": "N",
+            "modifier": "",
+            "diagnosisPointer": [1],
+            "daysOrUnits": 1,
+            "provider": {
+              "npi": "4567890123"
+            }
+          }
+        ],
+        "total": {
+          "value": 300.00,
+          "currency": "USD"
+        },
+        "supportingInfo": [
+          {
+            "sequence": 1,
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+                  "code": "info",
+                  "display": "Information"
+                }
+              ]
+            },
+            "valueString": "Knee pain and swelling, cortisone injection administered"
+          },
+          {
+            "sequence": 2,
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+                  "code": "autoaccident",
+                  "display": "Auto Accident"
+                }
+              ]
+            },
+            "valueBoolean": false
+          },
+          {
+            "sequence": 3,
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+                  "code": "workrelated",
+                  "display": "Work Related"
+                }
+              ]
+            },
+            "valueBoolean": false
+          }
+        ],
+        "insurance": [
+          {
+            "sequence": 1,
+            "focal": true,
+            "coverage": {
+              "reference": "urn:uuid:f6g7h8i9-j0k1-2l3m-4n5o-6p7q8r9s0t1u"
+            }
+          }
+        ],
+        "organization": {
+          "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-ein",
+            "value": "45-6789012"
+          }
+        }
+      }
+    }
+  ]
+} 

@@ -1,0 +1,14 @@
+langchain>=0.1.0
+langchain-community>=0.0.10
+langchain-core>=0.1.0
+langchain-huggingface>=0.0.2
+langchain-openai>=0.0.2
+transformers>=4.36.0
+pydantic>=2.0.0
+pypdf>=3.0.0
+torch>=2.0.0
+accelerate>=0.25.0
+sentencepiece>=0.1.99
+huggingface-hub>=0.19.0
+pandas>=2.0.0
+openai>=1.0.0
