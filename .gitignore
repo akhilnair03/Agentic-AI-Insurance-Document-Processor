@@ -2,3 +2,4 @@ synthea
 __pycache__
 llm_workflow_beta.py
 env
+filled_patient_data
